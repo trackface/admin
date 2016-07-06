@@ -16,5 +16,5 @@ Route::get('dashboard', 'DashboardController@index');
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
-Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::post('auth/login', ['as' => 'session', 'uses' => 'Auth\AuthController@authenticate']);
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
